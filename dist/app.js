@@ -12,8 +12,11 @@ function add(a, b) {
         return a + b;
     }
     ;
+    return a.toString() + b.toString();
 }
 ;
+const result = add(1, 5);
+const result2 = add("Tyler", "Gray");
 function printEmployeeInformation(emp) {
     console.log(`Name: ${emp.name}`);
     if ('privileges' in emp) {
@@ -77,7 +80,7 @@ function moveAnimal(animal) {
 }
 ;
 moveAnimal({ type: "bird", flyingSpeed: 50 });
-//Type Casting
+//TYPE CASTING
 // const userInputElement = <HTMLInputElement>document.getElementById('user-input');
 // const userInputElement = document.getElementById('user-input') as HTMLInputElement;
 const userInputElement = document.getElementById('user-input');
@@ -85,4 +88,21 @@ if (userInputElement) {
     userInputElement.value = "Hi There";
 }
 ;
-//Index Properties
+;
+const errorBag = {
+    //can add as many of this type of properties that we want because of the interface ErrorContainer lets us add however many so long as it is of that type^^
+    1: "not a valid email",
+    username: "Must start with capital character!"
+};
+function addAgain(a, b) {
+    if (typeof a === "string" || typeof b === "string") {
+        return a.toString() + b.toString();
+    }
+    ;
+    return a + b;
+}
+;
+const overloadResult1 = addAgain(1, 5);
+const overloadResult2 = addAgain("Tyler", "Gray");
+const overloadResult3 = addAgain(1, "Gray");
+const overloadResult4 = addAgain("Tyler", 1);
